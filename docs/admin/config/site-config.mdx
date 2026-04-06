@@ -1,10 +1,16 @@
 # Site configuration
 
-Site configuration defines how various Sourcegraph features behave. See the [full reference](#reference) below for a comprehensive list of site configuration options.
+Site configuration defines how various Sourcegraph features behave. It is distinct from [user and organization settings](/admin/config/settings), which control UI preferences and user-specific features. See the [full reference](#reference) below for a comprehensive list of site configuration options.
 
 ## Configuration overview
 
 [Go here](/admin/) for an overview of configuring Sourcegraph.
+
+After saving changes to site configuration, some settings take effect immediately while others require restarting the Sourcegraph frontend. In Kubernetes deployments, a frontend restart can be triggered with:
+
+```bash
+kubectl delete pods -l app=sourcegraph-frontend
+```
 
 ## View and edit site configuration
 
